@@ -2,7 +2,7 @@
 replicaCount: 1
 
 # name of resources such as deployment, container, service
-name: frontend-app-dev
+name: frontend-app-prod
 
 # Image repository and tag for the frontend container
 image:

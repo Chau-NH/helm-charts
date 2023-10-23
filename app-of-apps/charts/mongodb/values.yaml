@@ -1,8 +1,8 @@
 # Replica count for the database deployment
-replicaCount: 2
+replicaCount: 1
 
 # name of resources such as statefulset, container, service
-name: mongodb
+name: database-dev
 
 # Image repository and tag for the database container
 image:

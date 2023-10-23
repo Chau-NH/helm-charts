@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: myimage=480566855108.dkr.ecr.us-east-1.amazonaws.com/frontend
+    argocd-image-updater.argoproj.io/myimage.update-strategy: latest
+  name: frontend-auto-sync
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: frontend
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: app-of-apps/charts/frontend
+    repoURL: https://github.com/Chau-NH/helm-charts.git
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated: 
+      prune: true 
+      selfHeal: true 

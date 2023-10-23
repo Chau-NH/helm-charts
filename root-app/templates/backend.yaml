@@ -10,11 +10,11 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: backend
+    namespace: default
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: app-of-apps/charts/backend
+    path: apps/charts/backend
     repoURL: https://github.com/Chau-NH/helm-charts.git
     targetRevision: HEAD
   syncPolicy:

@@ -9,7 +9,7 @@ parameters:
 volumeBindingMode: WaitForFirstConsumer
 allowedTopologies:
 - matchLabelExpressions:
-  - key: topology.gke.io/zone
+  - key: topology.kubernetes.io/zone
     values:
-    - us-east-1a
     - us-east-1b
+    - us-east-1a

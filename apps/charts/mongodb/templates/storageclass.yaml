@@ -13,3 +13,7 @@ allowedTopologies:
     values:
     - us-east-1b
     - us-east-1a
+  - key: topology.ebs.csi.aws.com/zone
+    values:
+    - us-east-1b
+    - us-east-1a

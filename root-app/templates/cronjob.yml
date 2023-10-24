@@ -36,7 +36,7 @@ metadata:
 stringData:
   creds: will_be_set_by_the_job
 ---
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: ecr-secret-update

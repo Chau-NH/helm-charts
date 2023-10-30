@@ -1,5 +1,5 @@
 # Replica count for the frontend deployment
-replicaCount: 1
+replicaCount: 2
 
 # name of resources such as deployment, container, service
 name: frontend-app-dev

@@ -1,11 +1,11 @@
 mongodb:
   replicaCount: 1
-  name: database-dev
+  name: database
 
 frontend:
   replicaCount: 1
-  name: frontend-app-dev
+  name: frontend
 
 backend:
   replicaCount: 1
-  name: backend-app-dev
+  name: backend

@@ -4,7 +4,7 @@ metadata:
   name: database
   namespace: argocd
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: {{ .Values.namespace }}
@@ -19,7 +19,7 @@ spec:
       - {{ .Values.valuesFile }}
   syncPolicy:
     syncOptions:
-      - CreateNamespace=true
+    - CreateNamespace=true
     automated: 
       prune: true 
       selfHeal: true 

@@ -1,20 +1,18 @@
-# apiVersion: networking.k8s.io/v1
-# kind: IngressClass
-# metadata:
-#   name: istio
-# spec:
-#   controller: istio.io/ingress-controller
-# ---
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: istio
+spec:
+  controller: istio.io/ingress-controller
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    # kubernetes.io/ingress.class: istio
+    kubernetes.io/ingress.class: istio
 spec:
-  ingressClassName: nginx
-  # ingressClassName: istio
+  ingressClassName: istio
   rules:
   - http:
       paths:

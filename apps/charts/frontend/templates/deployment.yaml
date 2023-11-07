@@ -13,7 +13,7 @@ spec:
          {{- include "app.label" . | nindent 8 }}
       annotations:
         prometheus.io/scrape: "true"
-        prometheus.io/port: "3000"
+        prometheus.io/port: "8090"
         prometheus.io/path: "/metrics"
     spec:
       containers:

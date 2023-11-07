@@ -11,3 +11,4 @@ spec:
       protocol: {{ .Values.serviceProtocol }}
   selector:
     {{- include "app.label" . | nindent 4 }}
+

@@ -1,6 +1,6 @@
 # Helm Charts
 
-## App-of-Apss pattern
+## App-of-Apps pattern
 
 1. Create a helm chart as a root application with structure.
 ```
@@ -10,6 +10,8 @@ root-app
   |     |-- backend.yaml
   |     |-- frontend.yaml
   |     |-- mongodb.yaml
+  |     |-- prometheus.yaml // For monitoring
+  |     |-- grafana.yaml // For monitoring
   |     |-- ecr-credential.yaml // Only for credential to run ArgoCD Image Updater
   |-- Chart.yaml
   |-- values.yaml

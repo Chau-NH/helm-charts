@@ -16,22 +16,3 @@ spec:
             name: {{ .Values.name }}
             port:
               number: {{ .Values.servicePort }}
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: ingress
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-spec:
-  ingressClassName: nginx
-  rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: {{ .Values.namePreview }}
-            port:
-              number: {{ .Values.servicePort }}

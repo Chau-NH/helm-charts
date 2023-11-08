@@ -5,11 +5,11 @@ metadata:
   labels:
     {{- include "app.label" . | nindent 4 }}
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-      {{- include "app.label" . | nindent 8 }}
+      app: {{- include "app.label" . | nindent 4 }}
   template:
     metadata:
       labels:

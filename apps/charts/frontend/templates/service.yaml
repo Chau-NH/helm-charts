@@ -13,7 +13,6 @@ spec:
     {{- include "app.label" . | nindent 4 }}
   type: ClusterIP
 ---
-
 apiVersion: v1
 kind: Service
 metadata:

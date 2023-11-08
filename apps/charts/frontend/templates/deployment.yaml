@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.name }}
 spec:
   replicas: 2
-  revisionHistoryLimit: 2
+  revisionHistoryLimit: 1
   selector:
     matchLabels:
       app: frontend
@@ -24,7 +24,7 @@ spec:
       activeService: {{ .Values.name }}
       previewService: {{ .Values.namePreview }}
       autoPromotionEnabled: false
----
+
 
 # apiVersion: apps/v1
 # kind: Deployment

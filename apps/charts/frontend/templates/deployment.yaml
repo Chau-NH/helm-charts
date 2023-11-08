@@ -2,16 +2,18 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: {{ .Values.name }}
+  labels:
+    {{- include "app.label" . | nindent 4 }}
 spec:
-  replicas: 2
+  replicas: 1
   revisionHistoryLimit: 1
   selector:
     matchLabels:
-      app: frontend
+      {{- include "app.label" . | nindent 6 }}
   template:
     metadata:
       labels:
-        app: frontend
+        {{- include "app.label" . | nindent 8 }}
     spec:
       containers:
       - name: {{ .Values.name }}

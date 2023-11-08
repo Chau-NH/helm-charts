@@ -9,7 +9,7 @@ spec:
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-      app: {{- include "app.label" . | nindent 4 }}
+      {{- include "app.label" . | nindent 4 }}
   template:
     metadata:
       labels:

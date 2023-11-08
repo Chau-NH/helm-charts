@@ -3,17 +3,17 @@ kind: Rollout
 metadata:
   name: {{ .Values.name }}
   labels:
-    {{ include "app.label" . | nindent 6 }}
+    app: frontend
 spec:
   replicas: 2
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-      {{ include "app.label" . | nindent 6 }}
+      app: frontend
   template:
     metadata:
       labels:
-        {{ include "app.label" . | nindent 8 }}
+        app: frontend
     spec:
       containers:
       - name: {{ .Values.name }}

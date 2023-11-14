@@ -1,9 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress
-  labels:
-    {{- include "app.label" . | nindent 4 }}
+  name: rollout-bluegreen
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
@@ -16,22 +14,6 @@ spec:
         backend:
           service:
             name: {{ .Values.name }}
-            port:
-              number: {{ .Values.servicePort }}
-      # Blue service
-      - path: /blue
-        pathType: Prefix
-        backend:
-          service:
-            name: {{ .Values.name }}
-            port:
-              number: {{ .Values.servicePort }}
-      # Green service
-      - path: /green
-        pathType: Prefix
-        backend:
-          service:
-            name: {{ .Values.namePreview }}
             port:
               number: {{ .Values.servicePort }}
       

@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: {{ .Values.name }}
+  name: rollout-bluegreen
   labels:
-    {{- include "app.label" . | nindent 4 }}
+    app: rollout-bluegreen
 spec:
   replicas: 1
   revisionHistoryLimit: 1
   selector:
     matchLabels:
-      {{- include "app.label" . | nindent 6 }}
+      app: rollout-bluegreen
   template:
     metadata:
       labels:
-        {{- include "app.label" . | nindent 8 }}
+        app: rollout-bluegreen
     spec:
       containers:
       - name: {{ .Values.name }}

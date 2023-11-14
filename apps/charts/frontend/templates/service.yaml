@@ -10,7 +10,8 @@ spec:
       targetPort: {{ .Values.servicePort }}
       protocol: {{ .Values.serviceProtocol }}
   selector:
-    {{- include "app.label" . | nindent 4 }}
+    matchLabels:
+      {{- include "app.label" . | nindent 6 }}
   type: ClusterIP
 ---
 apiVersion: v1
@@ -25,5 +26,6 @@ spec:
       targetPort: {{ .Values.servicePort }}
       protocol: {{ .Values.serviceProtocol }}
   selector:
-    {{- include "app.label" . | nindent 4 }}
+    matchLabels:
+      {{- include "app.label" . | nindent 6 }}
   type: ClusterIP

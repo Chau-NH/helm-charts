@@ -27,4 +27,3 @@ spec:
   selector:
     {{- include "app.label" . | nindent 4 }}
   type: ClusterIP
-  

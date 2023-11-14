@@ -16,4 +16,21 @@ spec:
             name: {{ .Values.name }}
             port:
               number: {{ .Values.servicePort }}
+      # Blue service
+      - path: /blue
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ .Values.name }}
+            port:
+              number: {{ .Values.servicePort }}
+      # Green service
+      - path: /green
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ .Values.namePreview }}
+            port:
+              number: {{ .Values.servicePort }}
+      
       
